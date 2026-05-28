@@ -335,6 +335,48 @@ body.light-theme .source-popup,body.light-theme .floating-link-popup{background:
 
 /* EDIT NOTE MODAL */
 .wide-modal{width:620px;max-width:95vw}
+
+/* NURA WATCH — topbar pill */
+.nura-watch-pill{display:flex;align-items:center;gap:6px;font-size:11px;font-family:'JetBrains Mono',monospace;padding:4px 11px;border-radius:100px;border:1px solid rgba(168,85,247,0.3);color:#c084fc;background:rgba(168,85,247,0.08);cursor:pointer;transition:all .3s;position:relative}
+.nura-watch-pill:hover{border-color:rgba(168,85,247,0.6);background:rgba(168,85,247,0.14)}
+.nw-dot{width:5px;height:5px;border-radius:50%;background:#a855f7;animation:pulse 2s infinite}
+.nw-alert-badge{position:absolute;top:-4px;right:-4px;width:10px;height:10px;border-radius:50%;background:#ff5050;border:2px solid var(--bg);display:none;animation:pulse .8s infinite}
+
+/* NURA WATCH — notification popup */
+.nw-popup{position:fixed;top:80px;right:24px;width:340px;background:var(--bg2);border:1px solid rgba(168,85,247,0.4);border-radius:var(--r2);box-shadow:0 16px 50px rgba(0,0,0,.65),0 0 30px rgba(168,85,247,0.12);z-index:500;display:none;flex-direction:column;overflow:hidden;animation:nwSlideIn .35s cubic-bezier(.34,1.56,.64,1)}
+.nw-popup.show{display:flex}
+@keyframes nwSlideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:translateX(0) scale(1)}}
+.nw-popup-header{background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(124,58,237,0.08));padding:14px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(168,85,247,0.2)}
+.nw-popup-title{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:1.5px;color:#c084fc;text-transform:uppercase}
+.nw-popup-icon{font-size:16px;line-height:1}
+.nw-popup-close{background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;padding:3px 7px;border-radius:5px;transition:all .2s}
+.nw-popup-close:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.nw-popup-vitals{display:flex;gap:8px;padding:12px 16px 0;font-family:'JetBrains Mono',monospace;font-size:11px}
+.nw-vchip{flex:1;padding:7px 10px;border-radius:8px;text-align:center}
+.nw-vchip.focus{background:rgba(var(--accent-rgb),0.08);border:1px solid rgba(var(--accent-rgb),0.2);color:var(--accent2)}
+.nw-vchip.stress{background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.2);color:var(--gold2)}
+.nw-vchip-lbl{font-size:9px;letter-spacing:1.5px;opacity:.7;margin-bottom:2px}
+.nw-vchip-val{font-size:16px;font-weight:600}
+.nw-popup-body{padding:14px 16px;font-size:13px;color:var(--text2);line-height:1.75;font-style:italic;min-height:56px;position:relative}
+.nw-loading{display:flex;gap:4px;padding:6px 0;align-items:center}
+.nw-popup-tips{padding:0 16px 14px;display:flex;flex-direction:column;gap:7px}
+.nw-tip{display:flex;align-items:center;gap:9px;background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:9px 12px;font-size:12px;color:var(--text2);cursor:pointer;transition:all .2s}
+.nw-tip:hover{border-color:rgba(168,85,247,0.4);color:var(--text);background:rgba(168,85,247,0.06)}
+.nw-tip-icon{font-size:14px;flex-shrink:0}
+.nw-popup-footer{border-top:1px solid var(--border);padding:10px 16px;display:flex;justify-content:flex-end;gap:8px}
+.nw-dismiss-btn{background:none;border:1px solid var(--border);color:var(--text2);font-family:'Outfit',sans-serif;font-size:11px;padding:6px 14px;border-radius:7px;cursor:pointer;transition:all .2s}
+.nw-dismiss-btn:hover{border-color:rgba(168,85,247,0.4);color:var(--text)}
+.nw-snooze-btn{background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);color:#c084fc;font-family:'Outfit',sans-serif;font-size:11px;padding:6px 14px;border-radius:7px;cursor:pointer;transition:all .2s}
+.nw-snooze-btn:hover{background:rgba(168,85,247,0.2)}
+
+/* NURA WATCH — dashboard comment box */
+.nw-dashboard-comment{background:linear-gradient(135deg,rgba(168,85,247,0.06),rgba(124,58,237,0.03));border:1px solid rgba(168,85,247,0.25);border-radius:var(--r);padding:12px 14px;margin-top:12px;position:relative;overflow:hidden;transition:all .5s}
+.nw-dashboard-comment::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(168,85,247,0.5),transparent)}
+.nwdc-header{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.nwdc-label{font-size:9px;letter-spacing:2px;color:#a855f7;text-transform:uppercase;font-family:'JetBrains Mono',monospace;font-weight:600}
+.nwdc-dot{width:4px;height:4px;border-radius:50%;background:#a855f7;animation:pulse 2s infinite}
+.nwdc-text{font-size:12px;color:var(--text2);line-height:1.7;font-style:italic;min-height:20px;transition:opacity .4s}
+.nwdc-text.fading{opacity:0}
 </style>
 </head>
 <body>
@@ -374,6 +416,10 @@ body.light-theme .source-popup,body.light-theme .floating-link-popup{background:
   <div class="topbar-right">
     <div class="vital-pill focus-pill"><div class="vital-dot focus-dot"></div>Focus <span id="top-focus">84%</span></div>
     <div class="vital-pill stress-pill"><div class="vital-dot stress-dot"></div>Stress <span id="top-stress">12%</span></div>
+    <div class="nura-watch-pill" onclick="toggleNuraWatchPanel()" title="Nura Watch — AI state monitor">
+      <div class="nw-dot"></div>Watch
+      <div class="nw-alert-badge" id="nw-alert-badge"></div>
+    </div>
     <div class="timer-badge" id="top-timer"><span class="timer-label">Session</span><span id="top-timer-val">00:00</span></div>
     <div class="user-menu-container">
       <button class="user-badge" onclick="toggleUserDropdown(event)">
@@ -428,6 +474,11 @@ body.light-theme .source-popup,body.light-theme .floating-link-popup{background:
         </div>
       </div>
       <div class="health-box" id="nura-health-text">Synchronizing neuro-metrics from headband...</div>
+      <!-- NURA WATCH COMMENT -->
+      <div class="nw-dashboard-comment" id="nw-dashboard-comment">
+        <div class="nwdc-header"><div class="nwdc-dot"></div><span class="nwdc-label">Nura Watch</span></div>
+        <div class="nwdc-text" id="nwdc-text">Initializing AI state analysis...</div>
+      </div>
     </div>
 
     <!-- SESSION CARD -->
@@ -726,6 +777,26 @@ body.light-theme .source-popup,body.light-theme .floating-link-popup{background:
       <button class="btn" onclick="closeEditSubjModal()">Cancel</button>
       <button class="btn primary" onclick="commitSubjectEdit()">Rename</button>
     </div>
+  </div>
+</div>
+
+<!-- NURA WATCH POPUP -->
+<div class="nw-popup" id="nw-popup">
+  <div class="nw-popup-header">
+    <div class="nw-popup-title"><span class="nw-popup-icon">🔮</span>Nura Watch</div>
+    <button class="nw-popup-close" onclick="dismissNuraWatch()">✕</button>
+  </div>
+  <div class="nw-popup-vitals">
+    <div class="nw-vchip focus"><div class="nw-vchip-lbl">FOCUS</div><div class="nw-vchip-val" id="nw-focus-val">—</div></div>
+    <div class="nw-vchip stress"><div class="nw-vchip-lbl">STRESS</div><div class="nw-vchip-val" id="nw-stress-val">—</div></div>
+  </div>
+  <div class="nw-popup-body" id="nw-popup-body">
+    <div class="nw-loading"><div class="td"></div><div class="td"></div><div class="td"></div></div>
+  </div>
+  <div class="nw-popup-tips" id="nw-popup-tips"></div>
+  <div class="nw-popup-footer">
+    <button class="nw-dismiss-btn" onclick="dismissNuraWatch()">Dismiss</button>
+    <button class="nw-snooze-btn" onclick="snoozeNuraWatch()">Snooze 5 min</button>
   </div>
 </div>
 
@@ -1073,10 +1144,10 @@ let focusPct=84,stressPct=12,focusDir=1,stressDir=1;
 function updateVitals(){
   focusPct+=focusDir*(Math.random()*1.5);
   stressPct+=stressDir*(Math.random()*0.8);
-  if(focusPct>=96||focusPct<=55) focusDir*=-1;
-  if(stressPct>=70||stressPct<=5) stressDir*=-1;
-  focusPct=Math.max(55,Math.min(96,focusPct));
-  stressPct=Math.max(5,Math.min(70,stressPct));
+  if(focusPct>=96||focusPct<=45) focusDir*=-1;
+  if(stressPct>=75||stressPct<=5) stressDir*=-1;
+  focusPct=Math.max(45,Math.min(96,focusPct));
+  stressPct=Math.max(5,Math.min(75,stressPct));
   const f=Math.round(focusPct),s=Math.round(stressPct);
 
   ['top-focus','dash-focus','stats-focus','fe-focus'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=f+'%'; });
@@ -1093,6 +1164,7 @@ function updateVitals(){
     else ht.textContent="✅ Vitals normalized. Steady homeostatic balance across neural clusters.";
   }
   applyColorMode(getLightMode(f,s));
+  NuraWatch.onVitalsUpdate(f,s);
 }
 setInterval(updateVitals,3000);
 
@@ -1634,8 +1706,201 @@ function makeDraggable(popup, handle){
 }
 
 // ═══════════════════════════════════════════════
-// APP INIT
+// NURA WATCH — AI State Monitor
 // ═══════════════════════════════════════════════
+const NuraWatch = (() => {
+  let snoozedUntil = 0;
+  let lastAlertTime = 0;
+  let popupVisible = false;
+  let dashboardUpdateTimer = null;
+  const ALERT_COOLDOWN = 3 * 60 * 1000; // 3 minutes between alerts
+  const SNOOZE_DURATION = 5 * 60 * 1000; // 5 min snooze
+
+  // Build the prompt for Claude
+  function buildPrompt(f, s, mode) {
+    return `You are Nura Watch, an AI wellness monitor embedded in the Nura study app. You analyze a student's real-time biometric data from their EEG headband.
+
+Current vitals:
+- Focus: ${f}%
+- Stress: ${s}%
+- Light Mode: ${mode}
+
+${s > 60 && f < 55 ? `ALERT MODE: Both stress is critically high AND focus is critically low. This is a crisis state.` :
+  s > 60 ? `ALERT MODE: Stress is critically high (${s}%). Intervene.` :
+  f < 55 ? `ALERT MODE: Focus is critically low (${f}%). Intervene.` :
+  `MONITORING MODE: Vitals look ${f > 80 && s < 25 ? 'excellent' : 'acceptable'}.`}
+
+Write a SHORT, warm, first-person message (2 sentences max) that:
+1. Names what you're observing in their brain state RIGHT NOW
+2. Gives one specific, actionable micro-intervention
+
+Then on a new line starting with TIPS: write exactly 3 quick actions as a JSON array like:
+TIPS: [{"icon":"🫁","text":"4-7-8 breath cycle"},{"icon":"💧","text":"Drink water now"},{"icon":"🧘","text":"60-sec body scan"}]
+
+Be conversational, caring, not clinical. Never use bullet points in your message.`;
+  }
+
+  function buildDashboardPrompt(f, s) {
+    return `You are Nura Watch, an AI wellness monitor. In ONE sentence (max 15 words), give a sharp, insightful observation about this student's current brain state:
+Focus: ${f}% | Stress: ${s}%
+
+Examples of good responses:
+- "Sharp alpha activity — you're in the zone, protect this window."
+- "Cortisol creeping up; a 2-minute walk resets the hypothalamus."
+- "Pre-burnout pattern detected. Your hippocampus needs a recovery break."
+
+Write only the sentence, nothing else. Make it feel like a brilliant neuroscientist is watching over them.`;
+  }
+
+  async function callClaude(prompt) {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await response.json();
+    return data.content?.map(b => b.text || '').join('') || '';
+  }
+
+  async function updateDashboardComment(f, s) {
+    const el = document.getElementById('nwdc-text');
+    if (!el) return;
+    el.classList.add('fading');
+    await new Promise(r => setTimeout(r, 400));
+    try {
+      const reply = await callClaude(buildDashboardPrompt(f, s));
+      el.textContent = '"' + reply.trim().replace(/^["']|["']$/g, '') + '"';
+    } catch(e) {
+      el.textContent = `Focus ${f}% · Stress ${s}% — Nura Watch is monitoring.`;
+    }
+    el.classList.remove('fading');
+  }
+
+  async function triggerAlert(f, s) {
+    if (Date.now() < snoozedUntil) return;
+    if (popupVisible) return;
+    const now = Date.now();
+    if (now - lastAlertTime < ALERT_COOLDOWN) return;
+    lastAlertTime = now;
+
+    // Show alert badge on pill
+    const badge = document.getElementById('nw-alert-badge');
+    if (badge) badge.style.display = 'block';
+
+    // Open popup
+    const popup = document.getElementById('nw-popup');
+    document.getElementById('nw-focus-val').textContent = f + '%';
+    document.getElementById('nw-stress-val').textContent = s + '%';
+    document.getElementById('nw-popup-body').innerHTML = '<div class="nw-loading"><div class="td"></div><div class="td"></div><div class="td"></div></div>';
+    document.getElementById('nw-popup-tips').innerHTML = '';
+    popup.classList.add('show');
+    popupVisible = true;
+
+    // Determine mode label
+    const mode = s > 60 && f < 55 ? 'CRITICAL — High Stress & Low Focus' :
+                 s > 60 ? 'HIGH STRESS' : 'LOW FOCUS';
+
+    try {
+      const reply = await callClaude(buildPrompt(f, s, mode));
+      const tipsSplit = reply.split('TIPS:');
+      const message = tipsSplit[0].trim();
+      let tips = [];
+      if (tipsSplit[1]) {
+        try { tips = JSON.parse(tipsSplit[1].trim()); } catch(e) {}
+      }
+
+      document.getElementById('nw-popup-body').textContent = message;
+
+      if (tips.length) {
+        document.getElementById('nw-popup-tips').innerHTML = tips.map(t =>
+          `<div class="nw-tip"><span class="nw-tip-icon">${t.icon}</span>${t.text}</div>`
+        ).join('');
+      }
+    } catch(e) {
+      document.getElementById('nw-popup-body').textContent =
+        s > 60 ? `Your stress is spiking to ${s}%. Take 3 slow breaths — inhale 4 counts, hold 4, exhale 6.`
+               : `Your focus has dropped to ${f}%. Try the 20-20-20 rule: look 20 feet away for 20 seconds.`;
+      document.getElementById('nw-popup-tips').innerHTML = `
+        <div class="nw-tip"><span class="nw-tip-icon">🫁</span>4-7-8 breathing cycle</div>
+        <div class="nw-tip"><span class="nw-tip-icon">💧</span>Drink a glass of water</div>
+        <div class="nw-tip"><span class="nw-tip-icon">🚶</span>2-minute walk break</div>`;
+    }
+  }
+
+  function dismiss() {
+    document.getElementById('nw-popup').classList.remove('show');
+    document.getElementById('nw-alert-badge').style.display = 'none';
+    popupVisible = false;
+  }
+
+  function snooze() {
+    snoozedUntil = Date.now() + SNOOZE_DURATION;
+    dismiss();
+  }
+
+  function togglePanel() {
+    const popup = document.getElementById('nw-popup');
+    if (popup.classList.contains('show')) {
+      dismiss();
+    } else {
+      const f = Math.round(focusPct), s = Math.round(stressPct);
+      document.getElementById('nw-focus-val').textContent = f + '%';
+      document.getElementById('nw-stress-val').textContent = s + '%';
+      document.getElementById('nw-popup-body').innerHTML = '<div class="nw-loading"><div class="td"></div><div class="td"></div><div class="td"></div></div>';
+      document.getElementById('nw-popup-tips').innerHTML = '';
+      popup.classList.add('show');
+      popupVisible = true;
+      document.getElementById('nw-alert-badge').style.display = 'none';
+      // Load current state commentary
+      callClaude(buildPrompt(f, s, getLightMode(f, s))).then(reply => {
+        const tipsSplit = reply.split('TIPS:');
+        document.getElementById('nw-popup-body').textContent = tipsSplit[0].trim();
+        if (tipsSplit[1]) {
+          try {
+            const tips = JSON.parse(tipsSplit[1].trim());
+            document.getElementById('nw-popup-tips').innerHTML = tips.map(t =>
+              `<div class="nw-tip"><span class="nw-tip-icon">${t.icon}</span>${t.text}</div>`
+            ).join('');
+          } catch(e) {}
+        }
+      }).catch(() => {
+        document.getElementById('nw-popup-body').textContent = `Focus ${f}% · Stress ${s}% — ${f > 80 && s < 25 ? 'You\'re locked in. Keep going.' : 'Monitoring your state.'}`;
+      });
+    }
+  }
+
+  // Main watch loop — checks vitals
+  function check(f, s) {
+    // Trigger alert: stress HIGH (>60) AND focus LOW (<55)
+    if (s > 60 && f < 55) { triggerAlert(f, s); return; }
+    // Also alert on extreme single metric
+    if (s > 68) { triggerAlert(f, s); return; }
+    if (f < 57) { triggerAlert(f, s); return; }
+  }
+
+  // Dashboard comment — update every ~20 vitals ticks
+  let tickCount = 0;
+  function onVitalsUpdate(f, s) {
+    tickCount++;
+    if (tickCount === 1 || tickCount % 7 === 0) {
+      // Debounce rapid calls
+      clearTimeout(dashboardUpdateTimer);
+      dashboardUpdateTimer = setTimeout(() => updateDashboardComment(f, s), 400);
+    }
+    check(f, s);
+  }
+
+  return { onVitalsUpdate, dismiss, snooze, togglePanel };
+})();
+
+function dismissNuraWatch() { NuraWatch.dismiss(); }
+function snoozeNuraWatch() { NuraWatch.snooze(); }
+function toggleNuraWatchPanel() { NuraWatch.togglePanel(); }
+
 function initApp(){
   renderSubjectFilters();
   renderNotes('all');
